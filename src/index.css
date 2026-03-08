@@ -15,16 +15,16 @@
     --popover: 0 0% 100%;
     --popover-foreground: 228 54% 16%;
 
-    --primary: 228 54% 24%;
+    --primary: 240 100% 13%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 24 95% 53%;
+    --secondary: 24 100% 50%;
     --secondary-foreground: 0 0% 100%;
 
     --muted: 220 20% 96%;
     --muted-foreground: 220 10% 46%;
 
-    --accent: 24 95% 53%;
+    --accent: 24 100% 50%;
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84.2% 60.2%;
@@ -32,14 +32,14 @@
 
     --border: 220 20% 90%;
     --input: 220 20% 90%;
-    --ring: 228 54% 24%;
+    --ring: 240 100% 13%;
 
     --radius: 0.5rem;
 
-    --navy: 228 54% 24%;
-    --navy-light: 228 40% 35%;
-    --orange: 24 95% 53%;
-    --orange-hover: 24 95% 46%;
+    --navy: 240 100% 13%;
+    --navy-light: 240 60% 25%;
+    --orange: 24 100% 50%;
+    --orange-hover: 24 100% 43%;
 
     --sidebar-background: 0 0% 98%;
     --sidebar-foreground: 240 5.3% 26.1%;
@@ -52,25 +52,25 @@
   }
 
   .dark {
-    --background: 228 54% 8%;
+    --background: 240 100% 5%;
     --foreground: 0 0% 95%;
-    --card: 228 54% 12%;
+    --card: 240 100% 8%;
     --card-foreground: 0 0% 95%;
-    --popover: 228 54% 12%;
+    --popover: 240 100% 8%;
     --popover-foreground: 0 0% 95%;
-    --primary: 24 95% 53%;
+    --primary: 24 100% 50%;
     --primary-foreground: 0 0% 100%;
-    --secondary: 228 54% 24%;
+    --secondary: 240 100% 13%;
     --secondary-foreground: 0 0% 100%;
-    --muted: 228 30% 18%;
+    --muted: 240 30% 15%;
     --muted-foreground: 220 15% 65%;
-    --accent: 24 95% 53%;
+    --accent: 24 100% 50%;
     --accent-foreground: 0 0% 100%;
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 210 40% 98%;
-    --border: 228 30% 20%;
-    --input: 228 30% 20%;
-    --ring: 24 95% 53%;
+    --border: 240 30% 18%;
+    --input: 240 30% 18%;
+    --ring: 24 100% 50%;
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
     --sidebar-primary: 224.3 76.3% 48%;
@@ -93,5 +93,43 @@
 
   h1, h2, h3, h4, h5, h6 {
     @apply font-heading;
+  }
+}
+
+/* Smooth scroll */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Premium micro-interaction utilities */
+@layer utilities {
+  .btn-hover-lift {
+    @apply transition-all duration-300;
+  }
+  .btn-hover-lift:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px -5px hsl(var(--secondary) / 0.35);
+  }
+  .btn-hover-lift:active {
+    transform: translateY(0);
+  }
+
+  .icon-hover {
+    @apply transition-all duration-300;
+  }
+  .icon-hover:hover {
+    transform: scale(1.1) rotate(3deg);
+  }
+
+  .card-hover {
+    @apply transition-all duration-500;
+  }
+  .card-hover:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 20px 60px -15px hsl(var(--secondary) / 0.2);
+  }
+
+  .glow-secondary {
+    box-shadow: 0 0 20px hsl(var(--secondary) / 0.3), 0 0 40px hsl(var(--secondary) / 0.1);
   }
 }
