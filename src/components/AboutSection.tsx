@@ -73,7 +73,7 @@ const AboutSection = () => {
               key={v.title}
               variants={fadeUp}
               custom={i}
-              className="bg-muted rounded-xl p-8 text-center hover:shadow-lg transition-shadow"
+              className="glass rounded-xl p-8 text-center hover:shadow-lg transition-all duration-500 hover:-translate-y-1"
             >
               <div className="w-14 h-14 rounded-full bg-secondary/15 flex items-center justify-center mx-auto mb-5">
                 <v.icon className="w-7 h-7 text-secondary" />

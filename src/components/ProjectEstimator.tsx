@@ -194,7 +194,7 @@ const ProjectEstimator = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.5, ease }}
           >
-            <div className="sticky top-28 bg-primary rounded-3xl p-8 shadow-2xl">
+            <div className="sticky top-28 glass-dark bg-[hsl(var(--primary)/0.85)] rounded-3xl p-8 shadow-2xl">
               <div className="flex items-center gap-3 mb-6">
                 <div className="w-10 h-10 rounded-xl bg-secondary/20 flex items-center justify-center">
                   <Calculator className="w-5 h-5 text-secondary" />
