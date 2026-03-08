@@ -7,6 +7,7 @@ import ClientReviews from "@/components/ClientReviews";
 import PaymentSection from "@/components/PaymentSection";
 import ProjectEstimator from "@/components/ProjectEstimator";
 import FloatingButtons from "@/components/FloatingButtons";
+import PremiumFooter from "@/components/PremiumFooter";
 
 const Index = () => {
   return (
@@ -20,16 +21,7 @@ const Index = () => {
       <PaymentSection />
       <ProjectEstimator />
       <FloatingButtons />
-      <footer className="w-full py-4 text-center bg-[hsl(var(--primary))]">
-        <a
-          href="https://www.facebook.com/saymitsolution"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="text-sm text-primary-foreground/80 hover:text-[hsl(var(--accent))] transition-colors"
-        >
-          Developed by Saym IT Solution
-        </a>
-      </footer>
+      <PremiumFooter />
     </div>
   );
 };
