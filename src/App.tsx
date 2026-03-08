@@ -8,6 +8,8 @@ import Index from "./pages/Index";
 import AdminLogin from "./pages/AdminLogin";
 import AdminDashboard from "./pages/AdminDashboard";
 import NotFound from "./pages/NotFound";
+import CustomCursor from "./components/CustomCursor";
+import LoadingScreen from "./components/LoadingScreen";
 
 const queryClient = new QueryClient();
 
@@ -17,6 +19,8 @@ const App = () => (
       <TooltipProvider>
         <Toaster />
         <Sonner />
+        <LoadingScreen />
+        <CustomCursor />
         <BrowserRouter>
           <Routes>
             <Route path="/" element={<Index />} />
