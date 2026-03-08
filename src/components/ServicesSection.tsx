@@ -122,8 +122,19 @@ const ServicesSection = () => {
                   <p className="text-primary-foreground/70 text-sm leading-relaxed">
                     {service.tagline}
                   </p>
-                  <div className="mt-6 text-xs font-semibold text-secondary/80 uppercase tracking-wider group-hover:text-secondary transition-colors">
-                    Learn More →
+                  <div className="mt-4 flex flex-col gap-2">
+                    <a
+                      href={`https://wa.me/8801616151002?text=${encodeURIComponent(`Hi! I'm interested in your ${service.title} service.`)}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      onClick={(e) => e.stopPropagation()}
+                      className="inline-block bg-secondary text-secondary-foreground text-xs font-bold px-4 py-2 rounded-lg hover:bg-orange-hover transition-colors"
+                    >
+                      Place an Order
+                    </a>
+                    <div className="text-xs font-semibold text-secondary/80 uppercase tracking-wider group-hover:text-secondary transition-colors">
+                      Learn More →
+                    </div>
                   </div>
                 </div>
               </motion.div>

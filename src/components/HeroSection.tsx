@@ -55,12 +55,20 @@ const HeroSection = () => {
           </p>
 
           <div className="flex flex-wrap gap-4 justify-center lg:justify-start">
-            <Button variant="cta" size="lg" className="text-base px-8">
-              Start a Project
-            </Button>
-            <Button variant="heroGhost" size="lg" className="text-base px-8">
-              View Portfolio
-            </Button>
+            <a
+              href={`https://wa.me/8801616151002?text=${encodeURIComponent("Hi! I'd like to start a project with Saym IT Solution.")}`}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Button variant="cta" size="lg" className="text-base px-8">
+                Place an Order
+              </Button>
+            </a>
+            <a href="#portfolio">
+              <Button variant="heroGhost" size="lg" className="text-base px-8">
+                View Portfolio
+              </Button>
+            </a>
           </div>
         </div>
       </div>
