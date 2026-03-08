@@ -94,9 +94,13 @@ const HeroSection = () => {
             Welcome to
           </motion.p>
           <h1 className="font-heading text-4xl md:text-5xl lg:text-6xl font-black leading-tight text-primary">
-            <TextReveal text="SAYM " className="text-primary" />
-            <TextReveal text="IT " className="text-secondary" />
-            <TextReveal text="SOLUTION" className="text-primary" />
+            <span className="block whitespace-nowrap">
+              <TextReveal text="SAYM" className="text-primary" />{" "}
+              <TextReveal text="IT" className="text-secondary" />
+            </span>
+            <span className="block whitespace-nowrap break-keep">
+              <TextReveal text="SOLUTION" className="text-primary" />
+            </span>
           </h1>
           <p className="text-muted-foreground text-lg max-w-lg">
             We craft digital experiences that drive growth. From web development to full-scale IT solutions — your vision, our expertise.
