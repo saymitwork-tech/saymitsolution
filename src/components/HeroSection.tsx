@@ -8,7 +8,7 @@ const charVariants = {
   visible: (i: number) => ({
     opacity: 1,
     y: 0,
-    transition: { delay: 0.5 + i * 0.03, duration: 0.4, ease: [0.25, 0.1, 0.25, 1] },
+    transition: { delay: 0.5 + i * 0.03, duration: 0.4, ease: [0.25, 0.1, 0.25, 1] as [number, number, number, number] },
   }),
 };
 
@@ -94,7 +94,9 @@ const HeroSection = () => {
             Welcome to
           </motion.p>
           <h1 className="font-heading text-4xl md:text-5xl lg:text-6xl font-black leading-tight text-primary">
-            SAYM <span className="text-secondary">IT</span> SOLUTION
+            <TextReveal text="SAYM " className="text-primary" />
+            <TextReveal text="IT " className="text-secondary" />
+            <TextReveal text="SOLUTION" className="text-primary" />
           </h1>
           <p className="text-muted-foreground text-lg max-w-lg">
             We craft digital experiences that drive growth. From web development to full-scale IT solutions — your vision, our expertise.
