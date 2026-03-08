@@ -40,14 +40,20 @@ const PaymentSection = () => {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
+            whileHover={{ y: -4 }}
             className="relative group"
           >
-            <div className="absolute -inset-0.5 bg-gradient-to-r from-[#E2136E] to-[#D1175B] rounded-2xl opacity-60 group-hover:opacity-100 blur-sm transition-opacity duration-300" />
+            <div className="absolute -inset-0.5 rounded-2xl opacity-60 group-hover:opacity-100 blur-sm transition-all duration-500" style={{ background: "linear-gradient(135deg, #E2136E, #D1175B)" }} />
             <div className="relative bg-card rounded-2xl p-8 border border-border">
               <div className="flex items-center gap-3 mb-6">
-                <div className="w-12 h-12 rounded-xl bg-[#E2136E]/10 flex items-center justify-center">
-                  <Smartphone className="w-6 h-6 text-[#E2136E]" />
-                </div>
+                <motion.div
+                  className="w-12 h-12 rounded-xl flex items-center justify-center"
+                  style={{ background: "hsl(340 82% 49% / 0.1)" }}
+                  whileHover={{ rotate: 10, scale: 1.1 }}
+                  transition={{ type: "spring", stiffness: 400 }}
+                >
+                  <Smartphone className="w-6 h-6" style={{ color: "#E2136E" }} />
+                </motion.div>
                 <div>
                   <h3 className="font-heading font-bold text-lg text-foreground">bKash</h3>
                   <p className="text-muted-foreground text-xs">Mobile Payment</p>
@@ -60,8 +66,9 @@ const PaymentSection = () => {
                   <span className="font-heading text-xl font-bold text-foreground tracking-wider">
                     {bkashNumber}
                   </span>
-                  <button
+                  <motion.button
                     onClick={handleCopy}
+                    whileTap={{ scale: 0.9 }}
                     className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-secondary/10 text-secondary text-xs font-semibold hover:bg-secondary/20 transition-colors"
                   >
                     {copied ? (
@@ -75,7 +82,7 @@ const PaymentSection = () => {
                         Copy
                       </>
                     )}
-                  </button>
+                  </motion.button>
                 </div>
               </div>
 
@@ -93,14 +100,19 @@ const PaymentSection = () => {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
+            whileHover={{ y: -4 }}
             className="relative group"
           >
-            <div className="absolute -inset-0.5 bg-gradient-to-r from-primary to-navy-light rounded-2xl opacity-60 group-hover:opacity-100 blur-sm transition-opacity duration-300" />
+            <div className="absolute -inset-0.5 bg-gradient-to-r from-primary to-navy-light rounded-2xl opacity-60 group-hover:opacity-100 blur-sm transition-all duration-500" />
             <div className="relative bg-card rounded-2xl p-8 border border-border">
               <div className="flex items-center gap-3 mb-6">
-                <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center">
+                <motion.div
+                  className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center"
+                  whileHover={{ rotate: -10, scale: 1.1 }}
+                  transition={{ type: "spring", stiffness: 400 }}
+                >
                   <CreditCard className="w-6 h-6 text-primary" />
-                </div>
+                </motion.div>
                 <div>
                   <h3 className="font-heading font-bold text-lg text-foreground">Bank Transfer</h3>
                   <p className="text-muted-foreground text-xs">Direct Payment</p>
@@ -108,18 +120,16 @@ const PaymentSection = () => {
               </div>
 
               <div className="space-y-3 mb-4">
-                <div className="bg-muted rounded-xl p-4">
-                  <p className="text-xs text-muted-foreground mb-0.5">Bank Name</p>
-                  <p className="font-heading font-semibold text-sm text-foreground">Dutch-Bangla Bank Ltd.</p>
-                </div>
-                <div className="bg-muted rounded-xl p-4">
-                  <p className="text-xs text-muted-foreground mb-0.5">Account Name</p>
-                  <p className="font-heading font-semibold text-sm text-foreground">Saym IT Solution</p>
-                </div>
-                <div className="bg-muted rounded-xl p-4">
-                  <p className="text-xs text-muted-foreground mb-0.5">Account Number</p>
-                  <p className="font-heading font-semibold text-sm text-foreground tracking-wider">Contact us for details</p>
-                </div>
+                {[
+                  { label: "Bank Name", value: "Dutch-Bangla Bank Ltd." },
+                  { label: "Account Name", value: "Saym IT Solution" },
+                  { label: "Account Number", value: "Contact us for details" },
+                ].map((item) => (
+                  <div key={item.label} className="bg-muted rounded-xl p-4">
+                    <p className="text-xs text-muted-foreground mb-0.5">{item.label}</p>
+                    <p className="font-heading font-semibold text-sm text-foreground">{item.value}</p>
+                  </div>
+                ))}
               </div>
 
               <p className="text-xs text-muted-foreground">
