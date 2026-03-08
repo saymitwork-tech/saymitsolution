@@ -4,6 +4,7 @@ import AboutSection from "@/components/AboutSection";
 import ServicesSection from "@/components/ServicesSection";
 import FeaturedWorks from "@/components/FeaturedWorks";
 import ClientReviews from "@/components/ClientReviews";
+import ProjectEstimator from "@/components/ProjectEstimator";
 import FloatingButtons from "@/components/FloatingButtons";
 
 const Index = () => {
@@ -15,6 +16,7 @@ const Index = () => {
       <ServicesSection />
       <FeaturedWorks />
       <ClientReviews />
+      <ProjectEstimator />
       <FloatingButtons />
     </div>
   );
