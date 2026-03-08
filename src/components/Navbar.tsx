@@ -8,17 +8,14 @@ const Navbar = () => {
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-primary shadow-md">
-      <div className="container mx-auto flex items-center justify-between py-3 px-4">
+      <div className="mx-auto w-full max-w-[1440px] flex items-center justify-between py-3 px-4 sm:px-5">
         <a href="/" className="flex items-center gap-3">
           <img src={logo} alt="Saym IT Solution Logo — Best IT services in Bangladesh" className="h-10 w-10 object-contain" />
-          <span className="font-heading font-bold tracking-[0.08em] text-primary-foreground leading-tight" style={{ fontSize: "clamp(0.82rem, 1.25vw, 1.06rem)" }}>
-            <span className="hidden sm:inline whitespace-nowrap">
-              SAYM <span className="text-secondary">IT</span> SOLUTION
-            </span>
-            <span className="sm:hidden inline-flex flex-wrap items-center gap-x-1.5">
-              <span className="whitespace-nowrap">SAYM <span className="text-secondary">IT</span></span>
-              <span className="whitespace-nowrap">SOLUTION</span>
-            </span>
+          <span
+            className="font-heading font-bold tracking-[0.08em] text-primary-foreground whitespace-nowrap leading-none"
+            style={{ fontSize: "clamp(0.72rem, 1.75vw, 1.06rem)" }}
+          >
+            SAYM <span className="text-secondary">IT</span> SOLUTION
           </span>
         </a>
 
