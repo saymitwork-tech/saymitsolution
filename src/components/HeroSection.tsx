@@ -15,14 +15,14 @@ const HeroSection = () => {
         >
           <div className="relative">
             <motion.div
-              className="w-64 h-64 md:w-80 md:h-80 rounded-2xl overflow-hidden shadow-2xl border-4 border-secondary"
+              className="w-64 h-80 md:w-80 md:h-[420px] rounded-2xl overflow-hidden shadow-2xl border-4 border-secondary"
               whileHover={{ scale: 1.02 }}
               transition={{ type: "spring", stiffness: 300 }}
             >
               <img
                 src={founderImg}
                 alt="A. Kamal Ahmed Saym — Founder & CEO of Saym IT Solution | Best IT services in Bangladesh"
-                className="w-full h-full object-cover"
+                className="w-full h-full object-cover object-top transition-opacity duration-700 ease-in-out"
                 loading="eager"
               />
             </motion.div>
