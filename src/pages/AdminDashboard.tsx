@@ -3,7 +3,7 @@ import { useAuth } from "@/contexts/AuthContext";
 import { Navigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { LogOut, Briefcase, Users, LayoutDashboard } from "lucide-react";
-import logo from "@/assets/logo.png";
+import logo from "@/assets/logo.jpg";
 import AdminWorks from "@/components/admin/AdminWorks";
 import AdminLeads from "@/components/admin/AdminLeads";
 
