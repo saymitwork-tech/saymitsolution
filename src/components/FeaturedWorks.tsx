@@ -47,7 +47,7 @@ const ParallaxCard = ({ work, index }: { work: typeof works[0]; index: number })
       <motion.div style={{ y }} className="absolute inset-0">
         <img
           src={work.image}
-          alt={work.title}
+          alt={`${work.title} — Saym IT Solution | Best IT services in Bangladesh`}
           className="w-full h-[120%] object-cover transition-transform duration-700 group-hover:scale-105"
         />
       </motion.div>

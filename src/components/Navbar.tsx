@@ -10,7 +10,7 @@ const Navbar = () => {
     <nav className="fixed top-0 left-0 right-0 z-50 bg-primary shadow-md">
       <div className="container mx-auto flex items-center justify-between py-3 px-4">
         <a href="/" className="flex items-center gap-3">
-          <img src={logo} alt="Saym IT Solution Logo" className="h-10 w-10 object-contain" />
+          <img src={logo} alt="Saym IT Solution Logo — Best IT services in Bangladesh" className="h-10 w-10 object-contain" />
           <span className="font-heading text-lg font-bold tracking-wide text-primary-foreground">
             SAYM <span className="text-secondary">IT</span> SOLUTION
           </span>

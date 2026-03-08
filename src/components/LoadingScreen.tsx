@@ -76,7 +76,7 @@ const LoadingScreen = () => {
           {/* Logo */}
           <motion.img
             src={logo}
-            alt="Saym IT Solution"
+            alt="Saym IT Solution — Best IT services in Bangladesh"
             className="w-16 h-16 object-contain relative"
             initial={{ scale: 0, rotate: -180 }}
             animate={{ scale: 1, rotate: 0 }}
