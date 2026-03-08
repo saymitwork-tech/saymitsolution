@@ -68,7 +68,7 @@ const ProjectEstimator = () => {
   const categories = [...new Set(serviceOptions.map((s) => s.category))];
 
   return (
-    <section id="estimator" className="py-20 bg-background">
+    <section id="estimator" className="py-[100px] bg-background">
       <div className="container mx-auto px-4">
         <motion.div
           className="text-center mb-16"
