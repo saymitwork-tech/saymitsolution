@@ -13,8 +13,8 @@ export default {
       },
     },
     fontFamily: {
-      heading: ['Montserrat', 'sans-serif'],
-      body: ['Open Sans', 'sans-serif'],
+      heading: ['Playfair Display', 'serif'],
+      body: ['Montserrat', 'sans-serif'],
     },
     extend: {
       colors: {
