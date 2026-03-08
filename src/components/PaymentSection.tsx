@@ -4,7 +4,7 @@ import { useState } from "react";
 
 const PaymentSection = () => {
   const [copied, setCopied] = useState(false);
-  const bkashNumber = "01616151002";
+  const bkashNumber = "01990000996";
 
   const handleCopy = () => {
     navigator.clipboard.writeText(bkashNumber);
