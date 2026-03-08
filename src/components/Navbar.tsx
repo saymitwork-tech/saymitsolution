@@ -11,8 +11,14 @@ const Navbar = () => {
       <div className="container mx-auto flex items-center justify-between py-3 px-4">
         <a href="/" className="flex items-center gap-3">
           <img src={logo} alt="Saym IT Solution Logo — Best IT services in Bangladesh" className="h-10 w-10 object-contain" />
-          <span className="font-heading text-[15px] sm:text-lg font-bold tracking-wide text-primary-foreground whitespace-nowrap">
-            SAYM <span className="text-secondary">IT</span> SOLUTION
+          <span className="font-heading font-bold tracking-[0.08em] text-primary-foreground leading-tight" style={{ fontSize: "clamp(0.82rem, 1.25vw, 1.06rem)" }}>
+            <span className="hidden sm:inline whitespace-nowrap">
+              SAYM <span className="text-secondary">IT</span> SOLUTION
+            </span>
+            <span className="sm:hidden inline-flex flex-wrap items-center gap-x-1.5">
+              <span className="whitespace-nowrap">SAYM <span className="text-secondary">IT</span></span>
+              <span className="whitespace-nowrap">SOLUTION</span>
+            </span>
           </span>
         </a>
 
