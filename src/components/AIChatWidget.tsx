@@ -121,7 +121,7 @@ const AIChatWidget = () => {
             animate={{ scale: 1 }}
             exit={{ scale: 0 }}
             onClick={() => setOpen(true)}
-            className="fixed bottom-28 right-6 z-50 w-14 h-14 rounded-full bg-secondary text-secondary-foreground flex items-center justify-center shadow-lg"
+            className="fixed bottom-[168px] right-6 z-50 w-14 h-14 rounded-full bg-secondary text-secondary-foreground flex items-center justify-center shadow-lg"
             aria-label="Open AI Chat"
           >
             <Bot className="w-6 h-6" />
