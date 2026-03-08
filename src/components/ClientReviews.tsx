@@ -69,7 +69,7 @@ const ClientReviews = () => {
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: -40 }}
             transition={{ duration: 0.4, ease }}
-            className="relative bg-primary-foreground/5 backdrop-blur-xl border border-primary-foreground/10 rounded-3xl p-8 md:p-12"
+            className="relative glass-dark rounded-3xl p-8 md:p-12"
           >
             {/* Quote icon */}
             <Quote className="w-10 h-10 text-secondary/30 absolute top-6 right-8" />

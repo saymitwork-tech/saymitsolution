@@ -107,7 +107,7 @@ const ServicesSection = () => {
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.15, duration: 0.5, ease }}
                 onClick={() => setActiveService(i)}
-                className="group cursor-pointer relative rounded-2xl border border-primary-foreground/10 bg-primary-foreground/5 backdrop-blur-xl p-8 text-center transition-all duration-300 hover:bg-primary-foreground/10 hover:border-secondary/40 hover:shadow-[0_8px_40px_-12px_hsl(var(--orange)/0.3)]"
+                className="group cursor-pointer relative rounded-2xl glass-dark p-8 text-center transition-all duration-300 hover:bg-[hsl(var(--primary-foreground)/0.1)] hover:border-secondary/40 hover:shadow-[0_8px_40px_-12px_hsl(var(--orange)/0.3)]"
               >
                 {/* Glass highlight */}
                 <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-primary-foreground/10 via-transparent to-transparent pointer-events-none" />
