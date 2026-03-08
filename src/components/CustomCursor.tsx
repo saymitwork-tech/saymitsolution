@@ -1,19 +1,11 @@
-import { useEffect, useState, useCallback } from "react";
-import { motion } from "framer-motion";
+import { useEffect, useState, useRef } from "react";
 
 const CustomCursor = () => {
-  const [pos, setPos] = useState({ x: -100, y: -100 });
-  const [trailPos, setTrailPos] = useState({ x: -100, y: -100 });
-  const [clicking, setClicking] = useState(false);
-  const [hovering, setHovering] = useState(false);
   const [hidden, setHidden] = useState(false);
-
-  const updateTrail = useCallback(() => {
-    setTrailPos((prev) => ({
-      x: prev.x + (pos.x - prev.x) * 0.15,
-      y: prev.y + (pos.y - prev.y) * 0.15,
-    }));
-  }, [pos]);
+  const [hovering, setHovering] = useState(false);
+  const [clicking, setClicking] = useState(false);
+  const dotRef = useRef<HTMLDivElement>(null);
+  const ringRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     if (window.matchMedia("(pointer: coarse)").matches) {
@@ -21,69 +13,70 @@ const CustomCursor = () => {
       return;
     }
 
-    const move = (e: MouseEvent) => setPos({ x: e.clientX, y: e.clientY });
+    const move = (e: MouseEvent) => {
+      const x = e.clientX;
+      const y = e.clientY;
+
+      // Instant position — no lerp, no spring, no delay
+      if (dotRef.current) {
+        dotRef.current.style.transform = `translate(${x - 4}px, ${y - 4}px)`;
+      }
+      if (ringRef.current) {
+        ringRef.current.style.transform = `translate(${x - 22}px, ${y - 22}px) scale(${hovering ? 1.3 : 1})`;
+      }
+
+      const target = e.target as HTMLElement;
+      setHovering(!!target.closest("a, button, [role='button'], input, textarea, select"));
+    };
+
     const down = () => setClicking(true);
     const up = () => setClicking(false);
     const leave = () => setHidden(true);
     const enter = () => setHidden(false);
 
-    const checkHover = (e: MouseEvent) => {
-      const target = e.target as HTMLElement;
-      const isInteractive = target.closest("a, button, [role='button'], input, textarea, select, [data-hover]");
-      setHovering(!!isInteractive);
-    };
-
-    window.addEventListener("mousemove", move);
-    window.addEventListener("mousemove", checkHover);
+    window.addEventListener("mousemove", move, { passive: true });
     window.addEventListener("mousedown", down);
     window.addEventListener("mouseup", up);
     document.addEventListener("mouseleave", leave);
     document.addEventListener("mouseenter", enter);
 
-    const raf = setInterval(updateTrail, 16);
-
     return () => {
       window.removeEventListener("mousemove", move);
-      window.removeEventListener("mousemove", checkHover);
       window.removeEventListener("mousedown", down);
       window.removeEventListener("mouseup", up);
       document.removeEventListener("mouseleave", leave);
       document.removeEventListener("mouseenter", enter);
-      clearInterval(raf);
     };
-  }, [updateTrail]);
+  }, [hovering]);
 
   if (hidden) return null;
 
   return (
     <>
-      {/* Outer glow trail */}
+      {/* Ring */}
       <div
-        className="fixed top-0 left-0 pointer-events-none z-[9999] rounded-full"
+        ref={ringRef}
+        className="fixed top-0 left-0 pointer-events-none z-[9999] rounded-full will-change-transform"
         style={{
-          width: hovering ? 56 : 44,
-          height: hovering ? 56 : 44,
-          transform: `translate(${trailPos.x - (hovering ? 28 : 22)}px, ${trailPos.y - (hovering ? 28 : 22)}px)`,
+          width: 44,
+          height: 44,
           border: `2px solid hsl(var(--secondary) / ${hovering ? 0.8 : 0.5})`,
-          boxShadow: `0 0 ${hovering ? 25 : 15}px hsl(var(--secondary) / ${hovering ? 0.5 : 0.3}), 0 0 ${hovering ? 50 : 30}px hsl(var(--secondary) / 0.1)`,
-          transition: "width 0.3s, height 0.3s, border-color 0.3s, box-shadow 0.3s",
-          mixBlendMode: "screen",
+          boxShadow: hovering
+            ? "0 0 12px hsl(var(--secondary) / 0.4)"
+            : "0 0 8px hsl(var(--secondary) / 0.2)",
+          transition: "border-color 0.2s, box-shadow 0.2s, width 0.2s, height 0.2s",
         }}
       />
-      {/* Inner dot */}
-      <motion.div
-        className="fixed top-0 left-0 pointer-events-none z-[9999] rounded-full"
-        animate={{
-          x: pos.x - (clicking ? 5 : 4),
-          y: pos.y - (clicking ? 5 : 4),
-          scale: clicking ? 0.6 : 1,
-        }}
-        transition={{ type: "spring", stiffness: 600, damping: 28 }}
+      {/* Dot */}
+      <div
+        ref={dotRef}
+        className="fixed top-0 left-0 pointer-events-none z-[9999] rounded-full will-change-transform"
         style={{
           width: 8,
           height: 8,
           background: "hsl(var(--secondary))",
-          boxShadow: "0 0 8px hsl(var(--secondary) / 0.6)",
+          boxShadow: "0 0 6px hsl(var(--secondary) / 0.5)",
+          transform: clicking ? "scale(0.6)" : undefined,
         }}
       />
       <style>{`@media (pointer: fine) { *, *::before, *::after { cursor: none !important; } }`}</style>
