@@ -44,7 +44,7 @@ const PaymentSection = () => {
             className="relative group"
           >
             <div className="absolute -inset-0.5 rounded-2xl opacity-60 group-hover:opacity-100 blur-sm transition-all duration-500" style={{ background: "linear-gradient(135deg, #E2136E, #D1175B)" }} />
-            <div className="relative bg-card rounded-2xl p-8 border border-border">
+            <div className="relative glass rounded-2xl p-8">
               <div className="flex items-center gap-3 mb-6">
                 <motion.div
                   className="w-12 h-12 rounded-xl flex items-center justify-center"
@@ -104,7 +104,7 @@ const PaymentSection = () => {
             className="relative group"
           >
             <div className="absolute -inset-0.5 bg-gradient-to-r from-primary to-navy-light rounded-2xl opacity-60 group-hover:opacity-100 blur-sm transition-all duration-500" />
-            <div className="relative bg-card rounded-2xl p-8 border border-border">
+            <div className="relative glass rounded-2xl p-8">
               <div className="flex items-center gap-3 mb-6">
                 <motion.div
                   className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center"
