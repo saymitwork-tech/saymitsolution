@@ -1,11 +1,32 @@
 import founderImg from "@/assets/founder.jpg";
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
+import FloatingShapes from "./FloatingShapes";
+
+const charVariants = {
+  hidden: { opacity: 0, y: 40 },
+  visible: (i: number) => ({
+    opacity: 1,
+    y: 0,
+    transition: { delay: 0.5 + i * 0.03, duration: 0.4, ease: [0.25, 0.1, 0.25, 1] as [number, number, number, number] },
+  }),
+};
+
+const TextReveal = ({ text, className }: { text: string; className?: string }) => (
+  <span className={className}>
+    {text.split("").map((char, i) => (
+      <motion.span key={i} custom={i} variants={charVariants} initial="hidden" animate="visible" className="inline-block" style={{ whiteSpace: char === " " ? "pre" : undefined }}>
+        {char}
+      </motion.span>
+    ))}
+  </span>
+);
 
 const HeroSection = () => {
   return (
-    <section id="home" className="min-h-screen pt-20 bg-muted overflow-hidden">
-      <div className="container mx-auto px-4 flex flex-col lg:flex-row items-center gap-12 py-16 lg:py-24">
+    <section id="home" className="min-h-screen pt-20 bg-muted overflow-hidden relative">
+      <FloatingShapes />
+      <div className="container mx-auto px-4 flex flex-col lg:flex-row items-center gap-12 py-16 lg:py-24 relative z-10">
         {/* Left — Founder */}
         <motion.div
           className="flex-1 flex flex-col items-center lg:items-start gap-8"
@@ -73,7 +94,9 @@ const HeroSection = () => {
             Welcome to
           </motion.p>
           <h1 className="font-heading text-4xl md:text-5xl lg:text-6xl font-black leading-tight text-primary">
-            SAYM <span className="text-secondary">IT</span> SOLUTION
+            <TextReveal text="SAYM " className="text-primary" />
+            <TextReveal text="IT " className="text-secondary" />
+            <TextReveal text="SOLUTION" className="text-primary" />
           </h1>
           <p className="text-muted-foreground text-lg max-w-lg">
             We craft digital experiences that drive growth. From web development to full-scale IT solutions — your vision, our expertise.

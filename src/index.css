@@ -137,6 +137,18 @@ html {
     transform: translateY(0);
   }
 
+  /* Global button glow + scale on hover */
+  button, a[role="button"], .btn-glow {
+    @apply transition-all duration-300;
+  }
+  button:hover, a[role="button"]:hover, .btn-glow:hover {
+    box-shadow: 0 0 18px hsl(var(--secondary) / 0.25), 0 0 6px hsl(var(--secondary) / 0.15);
+    transform: scale(1.03);
+  }
+  button:active, a[role="button"]:active, .btn-glow:active {
+    transform: scale(0.98);
+  }
+
   .icon-hover {
     @apply transition-all duration-300;
   }
@@ -144,12 +156,24 @@ html {
     transform: scale(1.1) rotate(3deg);
   }
 
+  /* Card 3D tilt effect */
   .card-hover {
     @apply transition-all duration-500;
+    transform-style: preserve-3d;
+    perspective: 1000px;
   }
   .card-hover:hover {
-    transform: translateY(-4px);
+    transform: translateY(-4px) rotateX(2deg) rotateY(-2deg);
     box-shadow: 0 20px 60px -15px hsl(var(--secondary) / 0.2);
+  }
+
+  .card-tilt {
+    @apply transition-all duration-300;
+    transform-style: preserve-3d;
+  }
+  .card-tilt:hover {
+    transform: perspective(800px) rotateX(3deg) rotateY(-3deg) translateY(-6px);
+    box-shadow: 0 25px 50px -12px hsl(var(--secondary) / 0.25);
   }
 
   .glow-secondary {
