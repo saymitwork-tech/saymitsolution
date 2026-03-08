@@ -132,4 +132,19 @@ html {
   .glow-secondary {
     box-shadow: 0 0 20px hsl(var(--secondary) / 0.3), 0 0 40px hsl(var(--secondary) / 0.1);
   }
+
+  /* Glassmorphism */
+  .glass {
+    background: hsl(var(--card) / 0.6);
+    backdrop-filter: blur(16px) saturate(180%);
+    -webkit-backdrop-filter: blur(16px) saturate(180%);
+    border: 1px solid hsl(var(--border) / 0.3);
+  }
+
+  .glass-dark {
+    background: hsl(var(--primary) / 0.4);
+    backdrop-filter: blur(16px) saturate(180%);
+    -webkit-backdrop-filter: blur(16px) saturate(180%);
+    border: 1px solid hsl(var(--primary-foreground) / 0.08);
+  }
 }
