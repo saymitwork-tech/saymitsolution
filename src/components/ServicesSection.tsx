@@ -180,7 +180,7 @@ const ServicesSection = () => {
                 <div className="relative h-56 md:h-72 overflow-hidden">
                   <img
                     src={services[activeService].image}
-                    alt={services[activeService].title}
+                    alt={`${services[activeService].title} — Saym IT Solution | Best IT services in Bangladesh`}
                     className="w-full h-full object-cover"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-background via-background/30 to-transparent" />

@@ -21,7 +21,7 @@ const HeroSection = () => {
             >
               <img
                 src={founderImg}
-                alt="A. Kamal Ahmed Saym — Founder & CEO of Saym IT Solution"
+                alt="A. Kamal Ahmed Saym — Founder & CEO of Saym IT Solution | Best IT services in Bangladesh"
                 className="w-full h-full object-cover"
                 loading="eager"
               />

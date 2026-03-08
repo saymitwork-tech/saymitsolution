@@ -77,7 +77,7 @@ const ClientReviews = () => {
             <div className="flex flex-col items-center text-center">
               {/* Photo */}
               <div className="w-20 h-20 rounded-full overflow-hidden border-3 border-secondary mb-6 shadow-lg">
-                <img src={review.photo} alt={review.name} className="w-full h-full object-cover" />
+                <img src={review.photo} alt={`${review.name} — Client of Saym IT Solution | Best IT services in Bangladesh`} className="w-full h-full object-cover" />
               </div>
 
               {/* Stars */}
