@@ -20,6 +20,16 @@ const Index = () => {
       <PaymentSection />
       <ProjectEstimator />
       <FloatingButtons />
+      <footer className="w-full py-4 text-center bg-[hsl(var(--primary))]">
+        <a
+          href="https://www.facebook.com/saymitsolution"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-sm text-primary-foreground/80 hover:text-[hsl(var(--accent))] transition-colors"
+        >
+          Developed by Saym IT Solution
+        </a>
+      </footer>
     </div>
   );
 };
