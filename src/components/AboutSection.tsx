@@ -20,7 +20,7 @@ const values = [
 
 const AboutSection = () => {
   return (
-    <section id="about" className="py-20 bg-background">
+    <section id="about" className="py-[100px] bg-background">
       <div className="container mx-auto px-4">
         {/* Header */}
         <motion.div

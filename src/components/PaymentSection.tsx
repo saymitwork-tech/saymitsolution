@@ -13,7 +13,7 @@ const PaymentSection = () => {
   };
 
   return (
-    <section id="payment" className="py-20 bg-muted/50">
+    <section id="payment" className="py-[100px] bg-muted/50">
       <div className="container mx-auto px-4">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
